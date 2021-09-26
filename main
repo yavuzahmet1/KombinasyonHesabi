@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n, r, kombinasyon, total = 1, total1 = 1, total2 = 1;
+        System.out.println("N elemanlı bir kümenin eleman sayısını giriniz\t: ");
+        n = scanner.nextInt();
+        System.out.println("r elemanlı farklı grupların sayısını giriniz\t: ");
+        r = scanner.nextInt();
+        for (int i = 1; i <= n; i++) {
+            total = total * i;
+        }
+        for (int j = 1; j <= r; j++) {
+            total1 = total1 * j;
+        }
+        for (int k = 1; k <= (n - r); k++) {
+            total2 = total2 * k;
+        }
+        kombinasyon = total / (total1 * total2);
+        System.out.println("Kombinasyon sonucu\t: " + kombinasyon);
+    }
+}
